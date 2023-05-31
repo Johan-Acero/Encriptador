@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCRIPTADOR DE TEXTO</title>
+    <link rel="stylesheet" href="encriptadorestilos.css"> 
+</head>
+<body>
+    <div class="container">
+      <div class="encriptar">
+        <h1 class="h1">ENCRIPTADOR DE TEXTO</h1>
+        <textarea
+          name="texto"
+          class="texto"
+          id="texto"
+          cols="30"
+          rows="10"
+          placeholder="Ingresa el texto aquí"
+        ></textarea>
+
+        <div class="terminos">
+          <p><h2>SOLO LETRAS MINUSCULAS SIN ACENTOS.</h2></p>
+        </div>
+        <div class="botones">
+          <button class="btn-encriptar" type="button" onclick="encriptar()">
+            Encriptar
+          </button>
+          <input
+            type="button"
+            class="btn-desencriptar"
+            value="Desencriptar"
+            onclick="desencriptar()"
+          />
+        </div>
+      </div>
+      <div class="encriptado">
+        <img src="data:image/jpeg;base64,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" alt="" id="muñeco" />
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+          <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+          <p id="parrafo" ><h3>
+            Ingresa el texto que deseas encriptar o desencriptar
+          </p></h3>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="encriptador.js"></script>
+</html>
